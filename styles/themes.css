@@ -36,7 +36,7 @@
   --text-stroke-color: #000;
   --countor-color: #00CC14;
   --main-body-color: #F00;
-  --text-animation-color: #000;
+  --text-animation-color: #00CC14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,6 +55,6 @@
     --text-stroke-color: #000;
     --countor-color: #00CC14;
     --main-body-color: #F00;
-    --text-animation-color: #000;
+    --text-animation-color: #00CC14;
   }
 } 

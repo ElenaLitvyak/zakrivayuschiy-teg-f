@@ -79,6 +79,7 @@
   animation-delay: 0.1s;
   animation-timing-function: ease-in;
   animation-direction: alternate;
+  transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
@@ -87,6 +88,7 @@
   animation-delay: 0.3s;
   animation-timing-function: ease-in;
   animation-direction: alternate;
+  transform-origin: center;
 }
 
 @keyframes movement {

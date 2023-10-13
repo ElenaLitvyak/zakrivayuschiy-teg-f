@@ -88,12 +88,12 @@
 
 .theme-menu__button::after {
   content: " ";
-  width: 100%;
-  height: 2px;
+  inline-size: 100%;
+  block-size: 2px;
   background-color: var(--main-color, #000);
   position: absolute;
-  left: 0;
-  bottom: -3px;
+  inset-inline-start: 0;
+  inset-block-end: -3px;
   transform: scaleX(0);
   transition: transform 0.3s;
   transform-origin: left;
@@ -125,44 +125,49 @@
 
 .card__image-block {
   position: relative;
-  border-top: 2px solid var(--main-color, #000);
-  border-bottom: 2px solid var(--main-color, #000);
+  border-block-start: 2px solid var(--main-color, #000);
+  border-block-end: 2px solid var(--main-color, #000);
   box-sizing: border-box;
 }
 
 .card__image {
   inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: top center;
   display: block;
 }
 
-.card__image-grayscale {
+.card__image-1 {
+  filter: saturate(1.2);
+}
+
+.card__image-2 {
+  filter: sepia(50%);
+}
+
+.card__image-3 {
+  filter: hue-rotate(10deg);
+}
+
+.card__image-5 {
+  filter: invert(0.1);
+}
+
+.card__image-4 {
+  filter: contrast(80%) hue-rotate(20deg);
+}
+
+.card__image-6 {
+  filter: blur(2px)
+}
+
+.card__image-7 {
   filter: grayscale(0.8);
 }
 
-.card__image-saturate {
-  filter: saturate(200%);
-}
-
-.card__image-hue-rotate {
-  filter: hue-rotate(30deg);
-}
-
-.card__image-invert {
-  filter: invert(0.9);
-}
-
-.card__image-sepia {
-  filter: sepia(80%);
-}
-
-.card__image-blur {
-  filter: blur(10px)
-}
-
-.card__image-filters {
-  filter: hue-rotate(90deg) blur(5px) saturate(0.7);
+.card__image-8 {
+  filter: brightness(120%);
 }
 
 .card__label {
@@ -173,15 +178,15 @@
   inset-inline-end: clamp(0.8125rem, 0.54836rem + 1.127vw, 1.5625rem);
   inset-block-start: 25px;
   opacity: 0.5;
-  background-blend-mode: hard-light;
+  mix-blend-mode: hard-light;
   text-shadow:
-  -1px 0 var(--text-stroke-color, #FFF),
-  0 1px var(--text-stroke-color, #FFF),
-  1px 0 var(--text-stroke-color, #FFF),
-  0 -1px var(--text-stroke-color, #FFF);
+    -1px 0 var(--text-stroke-color, #FFF),
+    0 1px var(--text-stroke-color, #FFF),
+    1px 0 var(--text-stroke-color, #FFF),
+    0 -1px var(--text-stroke-color, #FFF);
 }
 
-@supports(-webkit-text-stroke: 1px var(--text-stroke-color, #FFF)) {
+@supports((text-stroke: 1px var(--text-stroke-color, #FFF)) or (-webkit-text-stroke: 1px var(--text-stroke-color, #FFF))) {
 
   .card__label {
   -webkit-text-stroke: 1px var(--text-stroke-color, #FFF);
@@ -259,23 +264,26 @@
 
 .card__like-button::after {
   content: " ";
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   background-color: var(--main-color, #000);
   transform: scaleX(0);
   transition: transform 0.5s;
   transition-timing-function: ease-in-out;
   transform-origin: left;
   position: absolute;
-  left: 0;
-  top: 0;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+}
+
+.card__like-button:hover {
+  color: var(--text-animation-color, #FFF);
 }
 
 .card__like-button:hover .card__button-text {
   position: relative;
   z-index: 1;
-  color: var(--text-animation-color, #FFF);
-  background-blend-mode: difference;
+  mix-blend-mode: difference;
 }
 
 .card__like-button:hover::after {
@@ -284,7 +292,7 @@
 
 .footer {
   display: flex;
-  padding-top: 50px;
+  padding-block-start: 50px;
   padding-block-end: 100px;
   justify-content: center;
 }
@@ -294,7 +302,7 @@
   position: relative; 
   inline-size: 335px;
   block-size: 55px;
-
+  border: 2px solid var(--main-color, #000);
 }
 
 .footer-icon {
@@ -312,16 +320,16 @@
 
 .footer__save-button::after {
   content: " ";
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   background-color: var(--main-color, #000);
   transform: scaleX(0);
   transition: transform 0.5s;
   transition-timing-function: ease-in-out;
   transform-origin: left;
   position: absolute;
-  left: 0;
-  top: 0;
+  inset-inline-start: 0;
+  inset-block-start: 0;
 }
 
 .footer__save-button:hover {
@@ -331,13 +339,13 @@
 .footer__save-button:hover .footer__button-text {
   position: relative;
   z-index: 1;
-  background-blend-mode: difference;
+  mix-blend-mode: difference;
 }
 
 .footer__save-button:hover .footer-icon {
   position: relative;
   z-index: 1;
-  background-blend-mode: difference;
+  mix-blend-mode: difference;
 }
 
 .footer__save-button:hover::after {
@@ -359,7 +367,7 @@
 }
 
 .dialog[open]::-webkit-scrollbar {
-  width: 0;
+  inline-size: 0;
 }
 
 .dialog-icon {
