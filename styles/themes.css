@@ -6,8 +6,6 @@
 */
 
 :root.theme-light {
-  --main-font: "Inter Variable";
-  --accent-font: "Press Start 2P";
   --main-font-weight: 400;
   --title-font-weight: 700;
   --background-color: #FFF;
@@ -15,16 +13,13 @@
   --backgraund-gradient: 
     repeating-linear-gradient(-90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
     repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
-    linear-gradient(#E7E7E7 0 0.01%, #1A1A1A);  
+    linear-gradient(#E7E7E7 0 0.01%, #1A1A1A);
   --text-stroke-color: #FFF;
   --countor-color: #000;
-  --main-body-color: #F00;
   --text-animation-color: #FFF;
 }
 
 :root.theme-dark {
-  --main-font: "Inter Variable";
-  --accent-font: "Press Start 2P";
   --main-font-weight: 465;
   --title-font-weight: 785;
   --background-color: #000;
@@ -35,15 +30,12 @@
     linear-gradient(#007F0C, #004306);
   --text-stroke-color: #000;
   --countor-color: #00CC14;
-  --main-body-color: #F00;
   --text-animation-color: #00CC14;
 }
 
 @media (prefers-color-scheme: dark) {
   
   :root {
-    --main-font: "Inter Variable";
-    --accent-font: "Press Start 2P";
     --main-font-weight: 465;
     --title-font-weight: 785;
     --background-color: #000;
@@ -54,7 +46,6 @@
       linear-gradient(#007F0C, #004306);
     --text-stroke-color: #000;
     --countor-color: #00CC14;
-    --main-body-color: #F00;
     --text-animation-color: #00CC14;
   }
 } 
