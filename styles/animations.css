@@ -26,6 +26,7 @@
 }
 
 .like-icon .core {
+  fill: transparent;
   transition-delay: 0.03s;
 }
 
@@ -35,6 +36,7 @@
 }
 
 .like-icon .main-body {
+  fill: transparent;
   transition-delay: 0s;
 }
 
